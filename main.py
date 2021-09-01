@@ -19,7 +19,8 @@ topicos = ['mundo', 'Brasil', 'negócios', 'tecnologia', 'entreterimento', 'ciê
 
 news = []
 for topic in tqdm(topicos):
-  date = parser.parse("Jan 1 2010 12:00AM")
+  date = datetime.strptime("2010-1-1", '%Y-%m-%d')
+  print("\n",(date+delta).strftime('%Y-%m-%d'))
   for i in tqdm(range(96)):
     response = gn.search(topic,
                       from_=date.strftime('%Y-%m-%d'), 
